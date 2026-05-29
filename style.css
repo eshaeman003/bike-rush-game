@@ -1,0 +1,123 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #87CEEB;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#gameContainer {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+#hud {
+  grid-row: 1;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  z-index: 10;
+  border-bottom: 3px solid #e63946;
+}
+
+.hud-item span {
+  color: #fca311;
+}
+
+#playfield {
+  grid-row: 2;
+  position: relative;
+  overflow: hidden;
+}
+
+#playfield canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#ui-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 20;
+}
+
+#ui-layer > * {
+  pointer-events: auto;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+}
+
+.menu {
+  background: #ffffff;
+  padding: 40px 50px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  min-width: 320px;
+  border-top: 6px solid #e63946;
+}
+
+.menu h1 {
+  margin: 0 0 15px 0;
+  color: #1d3557;
+  font-size: 36px;
+  text-transform: uppercase;
+  font-style: italic;
+  letter-spacing: 2px;
+}
+
+.menu p {
+  margin: 0 0 30px 0;
+  color: #457b9d;
+  font-size: 18px;
+}
+
+#finalScore {
+  font-weight: bold;
+  color: #e63946;
+  font-size: 24px;
+}
+
+button {
+  background: #e63946;
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+}
+
+button:hover {
+  background: #d62828;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
